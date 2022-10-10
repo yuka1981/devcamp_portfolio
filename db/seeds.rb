@@ -9,7 +9,7 @@ end
 
 puts "10 blogs have be created."
 
-5.times do |portfolio_item|
+9.times do |portfolio_item|
   Portfolio.create!(
     title: "Portfolio title: #{portfolio_item}",
     subtitle: "My great service",
@@ -21,7 +21,7 @@ end
 
 puts "5 portfolios have be created."
 
-9.times do |skill|
+5.times do |skill|
   Skill.create!(
     title: "Skill title #{skill}",
     percent_utilized: 15
