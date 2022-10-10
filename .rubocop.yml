@@ -1,0 +1,57 @@
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+
+Style/GlobalVars:
+  AllowedVariables:
+    - $redis
+    - $rollout
+
+Layout/LineLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/Documentation:
+  Exclude:
+    - "**/**.rb"
+
+Style/AsciiComments:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented_relative_to_receiver
+
+Style/SlicingWithRange:
+  Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
