@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PortfoliosController < ApplicationController
-  before_action :find_portfolio, only: %i[show edit update]
+  before_action :find_portfolio, only: %i[show edit update destroy]
 
   def index
     @portfolio_items = Portfolio.all
@@ -33,6 +33,12 @@ class PortfoliosController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @portfolio_item.destroy
+
+    redirect_to portfolios_path, notice: "Portfolio has deleted"
   end
 
   private
