@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PortfoliosController < ApplicationController
-  before_action :find_portfolio, only: %i[show edit update]
+  before_action :find_portfolio, only: %i[edit update]
 
   def index
     @portfolio_items = Portfolio.all
@@ -24,8 +24,6 @@ class PortfoliosController < ApplicationController
   end
 
   def edit; end
-
-  def show; end
 
   def update
     if @portfolio_item.update(portfolio_params)
