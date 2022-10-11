@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class PortfoliosController < ApplicationController
+  before_action :find_portfolio, only: %i[edit update]
+
   def index
     @portfolio_items = Portfolio.all
   end
@@ -21,7 +23,21 @@ class PortfoliosController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if @portfolio_item.update(portfolio_params)
+      redirect_to portfolios_path, notice: "Portfolio has updated"
+    else
+      render :edit
+    end
+  end
+
   private
+
+  def find_portfolio
+    @portfolio_item = Portfolio.find(params[:id])
+  end
 
   def portfolio_params
     params.require(:portfolio).permit(:title, :subtitle, :body)
