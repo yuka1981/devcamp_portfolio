@@ -32,8 +32,8 @@ RSpec.describe "List all portfolios in portfolio index page", type: :feature do
     it "should have show link in portfolio title" do
       visit portfolios_path
 
-      expect(page).to have_link("Portfolio title test index 0", href: "/portfolios/#{first_portfolio.id}")
-      expect(page).to have_link("Portfolio title test index 1", href: "/portfolios/#{second_portfolio.id}")
+      expect(page).to have_link("Portfolio title test index 0", href: "/portfolio/#{first_portfolio.id}")
+      expect(page).to have_link("Portfolio title test index 1", href: "/portfolio/#{second_portfolio.id}")
     end
   end
 end
