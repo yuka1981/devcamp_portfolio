@@ -29,6 +29,12 @@ RSpec.describe "List all portfolios in portfolio index page", type: :feature do
       expect(page).to have_link("Edit")
     end
 
+    it "should have delete link below each portfolios" do
+      visit portfolios_path
+
+      expect(page).to have_link("Delete")
+    end
+
     it "should have show link in portfolio title" do
       visit portfolios_path
 
