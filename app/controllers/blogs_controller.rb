@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   before_action :find_blog, only: %i[show edit update destroy]
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.ordered_by_updated_at.all
   end
 
   def show; end
@@ -42,7 +42,7 @@ class BlogsController < ApplicationController
   private
 
   def find_blog
-    @blog = Blog.find(params[:id])
+    @blog = Blog.friendly.find(params[:id])
   end
 
   def blog_params
