@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class BlogsController < ApplicationController
-  before_action :find_blog, only: %i[show edit update destroy]
+  before_action :find_blog, only: %i[show edit update destroy toggle_status]
 
   def index
     @blogs = Blog.ordered_by_updated_at.all
@@ -37,6 +37,17 @@ class BlogsController < ApplicationController
     @blog.destroy
 
     redirect_to blogs_path, notice: "Blog has be deleted."
+  end
+
+  def toggle_status
+    case @blog.status
+    when "draft"
+      @blog.published!
+    when "published"
+      @blog.draft!
+    end
+
+    redirect_to blogs_path, notice: "Blog has be updated."
   end
 
   private
