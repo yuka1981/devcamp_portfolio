@@ -3,7 +3,7 @@
 class Blog < ApplicationRecord
   enum status: {
     draft: 0,
-    pubilished: 1
+    published: 1
   }
 
   extend FriendlyId
