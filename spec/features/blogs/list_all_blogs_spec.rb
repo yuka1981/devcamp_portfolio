@@ -37,4 +37,11 @@ RSpec.describe "list all blogs in the index page" do
     expect(page).to have_link("Blog test title 0", href: "/blogs/blog-test-title-0")
     expect(page).to have_link("Blog test title 1", href: "/blogs/blog-test-title-1")
   end
+
+  it "should have status link below each blog" do
+    visit blogs_path
+
+    expect(page).to have_link("draft", href: "/blogs/blog-test-title-0/toggle_status")
+    expect(page).to have_link("draft", href: "/blogs/blog-test-title-1/toggle_status")
+  end
 end
