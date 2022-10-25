@@ -18,7 +18,7 @@ class PortfoliosController < ApplicationController
       if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: "Portifolio has created." }
       else
-        format.html { redner :new }
+        format.html { render :new }
       end
     end
   end
